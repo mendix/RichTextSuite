@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="RichText.widget.SimpleRichTextEditor" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>Simple Rich Text Editor</name>
+  <description>Shows a HTML Wysiwyg editor, which is quick and easy to deploy</description>
+
+  <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAK5SURBVBgZBcFPaJZ1HADwz+95n3e6uTnR
+EGdljRKtGCYiHTLxkIUmQeeCOnXzVnQIoi5BQV08TMo6GIiHiKI6ZEWgszzEmtpqSDP7s9ycm9NN
+977vnuf37fNJEWH/G6df6l676vki2YXVSCAhEpFVOU8uzMX36daNV88MH+oApIhw8O2zZz45vOuh
+okjrgoYAIALC7NKKEz8vmP67fee3XyfWjwwfakMJRSNt6yob68avaRQpkYhMHVlVheWV2r6tffYP
+jNi4eLyncWCodf7jI1Jr6sUSUkq9EdHoajQkIZALZOpEIWlPf27r4jndQy/oH9xp4c9tJk4de7eE
+IEGBlAgJREqKRP/yKXVcsH7r4+Ynf9eVOvrWbtK7YUt/CRBB2SBJIiW5Doqkd3nEllWj+gef1r56
+UldP8tfYhJt3UhTtuR0FRBAoU6FISYFGkaxePG1LfKv/gYNa/30oNW9o9vbpzvOOXj+wsvvwZ5cK
+CGSkRJGSIiWtK19af/uU/gef1ZoaVjRXdG7db+bMed173zJVD2QoIFdEkBG4fflrPYs/2vjIMzrT
+xzS6QvvWfWZGRs3tGZY2bFdnoICcQ0QQTI+e1L3wk5W82dWLR2Qtt+fvNnNuwuLeo1LvgNXNpK4C
+FFBn6iAysxc/8vCel636Z8SlL84a+2be+Hdjlh57R9WzWaDZKFSdCpSQq5AjvPlLx9DkrM74VwZ3
+POHm7JzJsUk/7PvU9Sv3yipwYlPTSjuDEqqqVtcMrG0a/+Oa9z8Ytnv7oOXNOyw9edyjffeIIIIL
+1yqRw0qrAiVU7ZyrnKNTS+te/9flFCYlkJdIS5UcRJEUOSnLlKs6V1DCSqueWdPVuOu1oc6aiCgE
+GdDfXYIIuptJSnKzkRbrKk9BCSnFe0+9cvq5lNLOED0AgkAIIEAr5zxaFk7A/5IUWNTkV3l/AAAA
+AElFTkSuQmCC</icon>
+
+  <properties>
+    <property key="name" type="attribute" required="true">
+      <caption>Attribute</caption>
+      <category>Behavior</category>
+      <description>The attribute to manipulate</description> 
+      <attributeTypes>
+        <attributeType name="String"/> 
+      </attributeTypes>
+    </property>
+		<property key="button_set" type="enumeration" defaultValue="simple" required="true">
+      <caption>Button set</caption>
+      <category>Behavior</category>
+      <description>
+				Simple: Only the most trivial buttons. The styles the user can choose from depend on the stylesheet.
+				Stylist: All options to manipulate text are turned on, however tables, attributes etc are disabled.
+				Advanced: The most powerful features of the rich text editor can be used.
+				All: All features, including the less common, are enabled.
+			</description>
+      <enumerationValues>
+        <enumerationValue key="simple">Simple</enumerationValue>
+        <enumerationValue key="stylist">Stylist</enumerationValue>
+        <enumerationValue key="advanced">Advanced</enumerationValue>
+        <enumerationValue key="all">All</enumerationValue>
+      </enumerationValues>
+    </property>
+
+    <property key="useIce" type="boolean" defaultValue="false">
+    	<caption>Use Ice Change tracker</caption>
+    	<category>Behavior</category>
+    	<description>Whether or not to use the Ice change Tracker in this field</description>
+    </property>
+
+
+
+	<property key="onchangeMF" type="microflow" required="false">
+		<caption>Onchange Microflow</caption>
+		<category>Behavior</category>
+		<description>Microflow to trigger on change. Be aware that when you refresh the current object; it might replace the current contents of the editor! Especially when there is some latency involved.</description>
+		<returnType type="Void"/>
+    </property>
+	<property key="onleaveMF" type="microflow" required="false">
+		<caption>Onleave Microflow</caption>
+		<category>Behavior</category>
+		<description>Microflow to trigger when the widget looses focus. Be aware that when you refresh the current object; it might replace the current contents of the editor! Especially when there is some latency involved.</description>
+		<returnType type="Void"/>
+    </property>
+
+<!--     <property key="iceEntity" type="entity" required="false">
+    	<caption>Ice user entity</caption>
+    	<category>Data Source</category>
+    	<description>User entity for the Ice configuration should be or inherit from System.User</description>
+    </property>
+    <property key="iceAttribute" type="attribute" entityProperty="iceEntity" required="false">
+    	<caption>Ice name attribute</caption>
+    	<category>Data Source</category>
+    	<description>User name for Ice configuration</description>
+    	<attributeTypes>
+        	<attributeType name="String"/> 
+      	</attributeTypes>
+    </property> -->
+
+
+
+	<property key="height" type="integer" defaultValue="300">
+      <caption>Height</caption>
+      <category>Appearance</category>
+      <description>Max height of the editor in pixels. Use zero for 'auto'</description>
+    </property>
+
+    <property key="language" type="enumeration" defaultValue="en">
+    	<caption>Editor Language</caption>
+    	<category>Appearance</category>
+    	<description>Language of the rich text editor (popups, tooltips etc.). More languages can be requested at support.mendix.com. Note that some dialogs might not be translated. This property only influences the language of the widget, the language of the spellchecker, if applicable, is controled by the browser. WARNING: All rich text editors need to use the same language, otherwise the translation fails.
+    	</description>
+    	<enumerationValues>
+	        <enumerationValue key="ar">Arabic</enumerationValue>
+	        <enumerationValue key="zh">Chinese</enumerationValue>
+	        <enumerationValue key="nl">Dutch</enumerationValue>
+	        <enumerationValue key="en">English</enumerationValue>
+	        <enumerationValue key="fr">French</enumerationValue>
+	        <enumerationValue key="de">German</enumerationValue>
+	        <enumerationValue key="it">Italian</enumerationValue>
+	        <enumerationValue key="pt">Portuguese</enumerationValue>
+	        <enumerationValue key="ru">Russian</enumerationValue>
+	        <enumerationValue key="es">Spanish</enumerationValue>
+	        <enumerationValue key="th">Thai</enumerationValue>
+      </enumerationValues>
+    </property>
+		
+	<property key="defaultstyles" type="string" defaultValue="" required="false">
+      <caption>Stylesheet</caption>
+      <category>Appearance</category>
+      <description>Stylesheet (CSS) file containing the by default available styles. If provided, the Styles dropdown will appear, containing a list of all available classes in the stylesheet. Furthermore the stylesheet might influence the built in styles. The same stylesheet value should be used for the corresponding Rich Text Viewer.</description>
+    </property>
+
+
+    <property key="enablespellcheck" type="boolean" defaultValue="false">
+    	<caption>Enable spellchecking</caption>
+    	<category>Appearance</category>
+    	<description>If true, the built-in spell checker of the browser (if available) will be enabled on this text editor.</description>
+    </property>
+		
+		<property key="imageentity" type="entity" required="false">
+			<caption>Image Entity</caption>
+			<category>Images</category>
+			<description>This domain entity will be browsable and insertable as image. Should inherit from System.Image</description>
+		</property>		
+		<property key="imageconstraint" type="entityConstraint" entityProperty="imageentity" required="false">
+			<caption>XPath Constraint</caption>
+			<category>Images</category>
+			<description>This constraint might be used to filter the set of browsable images.</description>
+		</property>
+		<property key="imageform" type="microflow" required="false">
+			<caption>Image Upload Microflow</caption>
+			<category>Images</category>
+			<description>This microflow should open a form to allow users to upload a new image.</description>
+			<returnType type="Boolean"/>
+		</property>
+		
+		<property key="doesnotmatter" type="object" isList="true" required="false">
+				<caption>Microflow links</caption>
+				<category>Microflow links</category>
+				<description>Microflows which can be linked to in the text.</description>
+				<properties>
+					<property key="functionNames" type="string" required="true">
+						<caption>Link Name</caption>
+						<category>Link</category>
+						<description>Descriptive name of a microflow, which can be inserted as link in the document. The mapping of the name to a real microflow is the responsibility of the Rich Text Viewer.</description>
+					</property>
+				</properties>
+			</property>
+	</properties>
+</widget>

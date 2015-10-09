@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="../lib/tiny_mce/tiny_mce_popup.js"></script>
+		<script type="text/javascript" src="filebrowser.js"></script>
+		<link rel="stylesheet" href="../styles/richtexteditor.css" type="text/css" />
+		
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="../styles/richtexteditor-ie.css">
+		<![endif]-->
+	</head>
+	<body>
+		<div class="richtextinput_browser">
+			<form>
+				<h1 class="richtext_title">Select an image</h1><br/>
+				<div id="left">
+					<input class="form_input" id="radio_type" type="radio" name="imgtype" value="url"></input>
+					<label class="form_label" for="radio_type">Use an image from the internet (URL)</label><br />
+					<fieldset style="margin-bottom: 15px;">
+						<legend>Url</legend>
+						<input class="input_field" type="text" name="url" checked="true" onkeyup="document.forms[0].imgtype[0].checked=true" onblur="document.forms[0].imgtype[0].checked=true;FileBrowser.updatePreview();"/>
+					</fieldset>
+					<div id="xasnode" style="display: none">
+						<input type="radio" name="imgtype" value="xas">Use an image from the database</input>
+						<input type="hidden" name="xasurl"/>
+						<fieldset>
+							<legend>Image libary</legend>
+							<div id="filebrowser_menu">
+								<a class="btn" href="javascript:void(0)" onclick="FileBrowser.refresh(true)"><span class="icon"></span>Refresh</a>
+								<a class="btn btn_img" href="javascript:void(0)" onclick="FileBrowser.uploadImage()" id="uploadnode"><span class="icon icon_new"></span>Upload new image</a>	
+								
+								<div class="paging">
+									<a href="javascript:void(0)" onclick="FileBrowser.previous()">&lt;&lt;&lt;</a>
+									<span id="filebrowser_counter">
+									</span>
+									<a href="javascript:void(0)" onclick="FileBrowser.next()">&gt;&gt;&gt;</a>
+								</div>
+							</div>
+							
+							<div id="filebrowser_contents">
+								Loading...
+							</div>
+							
+							<div id="search">
+								<label>Search</label>
+								<input class="input_field" id="quicksearch" type="text" value="" onkeyup="FileBrowser.updateSearch(this.value)" onblur="FileBrowser.updateSearch(this.value)"/>
+								<a class="clear" href="javascript:void(0)" onclick="FileBrowser.clearsearch()">&nbsp;</a>
+							</div>
+						</fieldset>
+					</div>
+					<input class="submit" type="submit" value="Insert" id="insertbtn" onclick="FileBrowser.insertAndClose(); return false; "/>
+					<input class="submit" type="button" value="Cancel" onclick="tinyMCEPopup.close()"/>
+				</div>
+				
+				<div id="right">
+					<fieldset>
+					<legend>Dimensions</legend>
+						<ol>
+							<li>
+								<label class="form_label form_label_1">Width: </label>
+								<input class="input_field" name="width" type="text" onblur="FileBrowser.updatePreview()"/>
+							</li>
+							<li>
+								<label class="form_label form_label_1">Height: </label>
+								<input class="input_field" name="height" type="text" onblur="FileBrowser.updatePreview()"/>
+							</li>
+						</ol>
+					</fieldset>
+					
+					<fieldset>
+						<legend>Preview</legend>
+						<div style="height:153px; width:323px; overflow:auto;">
+							<img alt="nothing to preview" id="previewimg"/>
+						</div>
+					</fieldset>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,197 @@
+/* CSS for the tiny_mce editor and the popups, not for the content! */
+
+@import url(../lib/tiny_mce/themes/advanced/skins/default/ui.css);
+
+.richtextinput a {
+	color: #555;
+	text-decoration: none;
+}
+.richtextinput a:hover,
+.richtextinput a:focus { text-decoration: underline; }
+
+.richtextinput ol, 
+.richtextinput ul, 
+.richtextinput li  {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+.richtextinput #left {
+	float: left;
+	width: 340px;
+}
+.richtextinput #right {
+	float: left;
+	width: 340px;
+	margin: 15px 0 0 10px;
+}
+.richtextinput h1.richtext_title {
+	margin: 0;
+	font-weight: normal;
+	color: #777;
+	font-size: 28px;
+}
+.richtextinput .richtextinput_browser {
+	font-family: Arial,Verdana;
+	font-size: 12px;
+	color: #555;
+}
+.richtextinput .richtextinput_browser fieldset {
+	margin: 5px 0;
+	border: 1px solid #CCC;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.richtextinput .richtextinput_browser .form_label { float: left; }
+.richtextinput .richtextinput_browser .form_label_1 { width: 80px; }
+.richtextinput .richtextinput_browser .form_input { float: left; }
+
+.richtextinput .richtextinput_browser .input_field {
+	width: 200px;
+	padding: 2px;
+	border: 1px solid #999;
+}
+.richtextinput .richtextinput_browser a.clear {
+	padding: 0 0 1px 20px;
+	background: url(../styles/icons.png) no-repeat -40px -2px;
+}
+.richtextinput .richtextinput_browser a.clear:hover,
+.richtextinput .richtextinput_browser a.clear:focus { text-decoration: none; }
+.richtextinput .richtextinput_browser ol li { margin-bottom: 5px; }
+
+.richtextinput input.submit {
+	padding: 3px;
+	cursor: pointer;
+	border: 1px solid #999;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background-color: #D4D0C8;
+}
+
+.richtextinput input.submit:hover,
+.richtextinput input.submit:hover {
+	color: #000;
+	background-color: #F0F0EE;
+}
+.richtextinput { }
+.richtextinput .richtextinput_microflownode_selected { 	
+	font-weight : bold; 
+	cursor : pointer;
+}
+
+.richtextinput .richtextinput_microflownode { 	
+	cursor : pointer;
+}
+
+
+.richtextinput .richtextinput_imagenode {
+	float : left;
+	margin-right: 5px;
+}
+
+.richtextinput #filebrowser_contents {
+	float: left;
+	width: 320px;
+	margin-top: 5px;
+}
+.richtextinput .filebrowser_contents { margin-bottom: 10px; }
+.richtextinput #filebrowser_menu { }
+.richtextinput #filebrowser_menu .paging { float: right; }
+.richtextinput #search {
+	float: left;
+	margin-top: 10px;
+}
+
+.richtextinput .defaultSkin span.mce_mximage { 
+	background-position:-380px 0; /* build in MCE image */ 
+} 
+.richtextinput .defaultSkin span.mce_mxlink { 
+	background-position:-500px 0; /* build in MCE image */ 
+} 
+.richtextinput .defaultSkin span.mce_mxpreview { 
+	background-position:-420px -20px; /* build in MCE image */ 
+} 
+.richtextinput .defaultSkin .mceSplitButton span.mce_mxattribute  {
+	background: url(../styles/icons.png) no-repeat -37px -39px !important; /* build in MCE image */ 
+}
+.richtextinput .defaultSkin .mceIcon {
+	background-image: url(../styles/icons.png) !important;
+}
+
+.richtextinput .richtextinput_imagenode img {
+	width: 100px;
+	height: 80px;
+}
+
+.richtextinput .richtextinput_imagenode span { display: block; }
+
+.richtextinput .microFlow {
+	padding-right: 20px;
+	background: url(../styles/Microflow.png) no-repeat right;
+}
+.richtextinput .btn {
+	float: left;
+	padding: 0 0 2px 0;
+	font-size: 11px;
+	font-weight: bold;
+}
+.richtextinput .btn_img {
+	margin-left: 10px;
+}
+.richtextinput .btn .icon {
+	float: left;
+	display: block;
+	width: 11px;
+	height: 18px;
+	padding-right: 10px;
+	background: url(../styles/icons.png) no-repeat -20px -41px;
+}
+.richtextinput .btn .icon_new {
+	background-position: -381px -3px;
+}
+/* TINYMCE OVERRIDES */
+.richtextinput .clearlooks2_modalBlocker {
+	height : 0px !important; width: 0px !important; /* no modal dialogs; interfere with image upload */
+}
+.richtextinput #insert,
+.richtextinput #cancel {
+	background: #FFF !important; 
+}	
+
+/** Preview Browser
+*********************/
+.richtextinput body.prev_browser {
+	background-color: #FFF;
+}
+.richtextinput body.prev_browser .richtextinput_previewborder {
+	padding: 5px;
+	border: 1px solid #CCC;
+}	
+.richtextinput body.prev_browser .richtextinput_browser_preview .counter {
+	float: right;
+}
+.richtextinput body.prev_browser legend {
+	margin-bottom: 5px;
+	padding: 0;
+}
+.richtextinput body.prev_browser .richtextinput_browser a.clear {
+	vertical-align: top;
+	padding-bottom: 4px;
+}
+.richtextinput body.prev_browser .richtextinput_browser fieldset {
+	margin: 0;
+	border: none;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+.richtextinput body.prev_browser #search {
+	margin:0;
+}
+
+.richtextinput div.clearlooks2 {  
+	/* solves zindex issue for popups (see #8582). Other issues using JS don't seem to work sinds focus of inline popus is restored on almost all events */
+	/* DRE: bumped the z-index to 899 (same as the mendix dialogs) to solve issue #12420 */
+	/* MWE: 5-11-12: Removed this again, caused ticket #14782. In the latest RTE version the z-index is already very high (300K), so it solves both issues.  
+	/* MWE: note that this re-introduces bug 8582 again, popups created by the add-image microflow will behind the popup again. The basic propblem is that we cannot get the MCE popus *in-between*
+	  Maybe the popup should just be hidden when pressing the add button? Although that will be anoying as well. Maybe if we insert the image directly into the content ? */
+    z-index: 899 !important;
+}

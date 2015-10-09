@@ -1,0 +1,26 @@
+/* client reset stuff */
+@import url(../../../../ui/yui/reset-fonts.css);
+
+/* should match reset-fonts, required for advanced preview */
+/*.mceContentBody, body {
+	font:13px/1.231 arial,helvetica,clean,sans-serif;
+}*/
+/** Editor specific */ 
+/*#tinymce .metaattribute {
+	background-color:#DDDDDD;
+	color:black;
+	cursor:default;
+	font-weight:bold;
+	padding:1px 4px 2px;
+}*/
+/* IE */
+* html body {
+scrollbar-3dlight-color:#F0F0EE;
+scrollbar-arrow-color:#676662;
+scrollbar-base-color:#F0F0EE;
+scrollbar-darkshadow-color:#DDD;
+scrollbar-face-color:#E0E0DD;
+scrollbar-highlight-color:#F0F0EE;
+scrollbar-shadow-color:#F0F0EE;
+scrollbar-track-color:#F5F5F5;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="../lib/tiny_mce/tiny_mce_popup.js"></script>
+		<script type="text/javascript" src="linkbrowser.js"></script>
+		<link rel="stylesheet" href="../styles/richtexteditor.css" type="text/css" />
+		
+			<!--[if IE]>
+				<link rel="stylesheet" type="text/css" href="../styles/richtexteditor-ie.css">
+			<![endif]-->
+	</head>
+	<body class="richtextinput">
+		<div class="richtextinput_browser">
+			<form>
+				<ol>
+					<li>
+						<h1>Select a link</h1><br/>
+					</li>
+					<li>
+						<input class="form_input" id="open_page" type="radio" name="linktype" value="url" />
+						<label class="form_label" for="open_page">Open a internet page (URL)</label><br />
+					</li>
+					<li>
+						<input class="form_input" id="target_window" type="checkbox" defaultChecked="checked" name="windowTarget" />
+						<label class="form_label" for="target_window">Open link in new window.</label><br />
+					</li>
+				
+					<li>
+						<fieldset>
+							<legend>Url</legend>
+							<input class="input_field" type="text" name="url" onblur="document.forms[0].linktype[0].checked=true" onkeyup="document.forms[0].linktype[0].checked=true" value="http://"/>
+						</fieldset>
+					</li>
+					
+				
+					<li>
+						<div id="xasnode" style="display: none">
+							<input class="form_input" id="exec_microflow" type="radio" name="linktype" value="xas" />
+							<label class="form_label microFlow" for="exec_microflow">Execute an internal link</label><br />
+							<input type="hidden" name="xasurl"/>
+							<fieldset>
+								<ul id="linkbrowser_contents" cellspacing="0" cellpadding="0">
+									<li>No internal links defined. </li>
+								</table>
+							</fieldset>
+						</div>
+					</li>
+					<li>
+						<input class="submit" type="submit" value="Insert" id="insertbtn" onclick="LinkBrowser.insertAndClose(); return false; "/>
+						<input class="submit" type="button" value="Cancel" onclick="tinyMCEPopup.close()"/>
+					</li>
+				</ol>
+			</form>
+		</div>
+	</body>
+</html>

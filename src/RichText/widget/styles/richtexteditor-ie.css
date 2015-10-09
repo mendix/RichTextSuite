@@ -1,0 +1,12 @@
+fieldset {
+	padding: 5px !important;
+}
+#right {
+	margin-top: 10px;
+}
+#filebrowser_menu {
+	margin-top: 2px;
+}
+body.prev_browser .richtextinput_browser a.clear {
+	background-position: -40px -5px;
+}
