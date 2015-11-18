@@ -1,5 +1,7 @@
 # RichTextSuite
-> This widget is based on a legacy library and isn't actively supported. Please use CKEditor widget for text editor requirements in your project.
+> **This widget is based on a legacy library and isn't actively supported. If you want to contribute to the widget, or actively maintain it, please contact us!**
+>
+> **Please use CKEditor widget ([AppStore](https://appstore.home.mendix.com/link/app/1715/Mendix/CKEditor-For-Mendix)/[Github](https://github.com/mendix/CKEditorForMendix)) for text editor requirements in your project.**
 
 The Rich Text Suite provides two widgets to enable styled text in your application. The rich text editor can be used to create such texts. It supports fonts, colors, images, tables, links, microflow invocations, CSS classes, in short, everything you might expect from such editor.
 
